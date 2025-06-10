@@ -30,6 +30,15 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+//implement button scroll to (Learn more)
+
+const btnScrolTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrolTo.addEventListener('click', () => {
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
 //todo: Practices
 //addelement to the dom
 const message = document.createElement('div');
@@ -42,11 +51,17 @@ header.append(message);
 document.querySelector('.btn--close-cookie').addEventListener('click', () => {
   message.remove();
 });
+
+//styles
 message.style.backgroundColor = '#37383d';
 message.style.width = '100%';
-message.style.borderRadius = '5px'
-console.log(getComputedStyle(message).height);
+message.style.borderRadius = '5px';
+// console.log(getComputedStyle(message).height);
 
 message.style.height =
   parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
-console.log(getComputedStyle(message).height);
+// console.log(getComputedStyle(message).height);
+
+//Attributes
+const logo = document.getElementById('logo');
+// console.log(logo.src);
