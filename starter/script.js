@@ -7,7 +7,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
-const header = document.querySelector('header')
+const header = document.querySelector('header');
 const openModal = function () {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -39,9 +39,14 @@ message.textContent = 'We use cookied for improved functionality.';
 message.innerHTML = `We use cookied for improved functionality.     <button class="btn btn--close-cookie">Got it!</button>`;
 header.append(message);
 
-
-document.querySelector('.btn--close-cookie').addEventListener('click',()=> {
-  message.remove()
-})
+document.querySelector('.btn--close-cookie').addEventListener('click', () => {
+  message.remove();
+});
 message.style.backgroundColor = '#37383d';
-message.style.width = "120%"
+message.style.width = '100%';
+message.style.borderRadius = '5px'
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+console.log(getComputedStyle(message).height);
