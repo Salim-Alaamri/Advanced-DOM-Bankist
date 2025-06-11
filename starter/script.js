@@ -65,3 +65,7 @@ message.style.height =
 //Attributes
 const logo = document.getElementById('logo');
 // console.log(logo.src);
+
+//Hover by a mouse / handle the events
+const h1 = document.querySelector('h1');
+h1.addEventListener('mouseenter', () => alert('Mouse Hover is working'));
