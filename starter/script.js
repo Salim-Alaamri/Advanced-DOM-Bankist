@@ -32,12 +32,22 @@ document.addEventListener('keydown', function (e) {
 
 //implement button scroll to (Learn more)
 
-const btnScrolTo = document.querySelector('.btn--scroll-to');
+const learnMore = document.querySelector('.btn--scroll-to');
+const features = document.querySelector('#nav__features');
+const operation = document.querySelector('#nav__operations');
+const testimonials = document.querySelector('#nav__testimonials');
 const section1 = document.querySelector('#section--1');
+const section2 = document.querySelector('#section--2');
+const section3 = document.querySelector('#section--3');
 
-btnScrolTo.addEventListener('click', () => {
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+const scrolTo = el => {
+  el.scrollIntoView({ behavior: 'smooth' });
+};
+
+learnMore.addEventListener('click', () => scrolTo(section1));
+features.addEventListener('click', () => scrolTo(section1));
+operation.addEventListener('click', () => scrolTo(section2));
+testimonials.addEventListener('click', () => scrolTo(section3));
 
 //todo: Practices
 //addelement to the dom
@@ -68,4 +78,13 @@ const logo = document.getElementById('logo');
 
 //Hover by a mouse / handle the events
 const h1 = document.querySelector('h1');
-h1.addEventListener('mouseenter', () => alert('Mouse Hover is working'));
+// h1.addEventListener('mouseenter', () => alert('Mouse Hover is working'));
+
+// Generate random color
+
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1));
+const randomColor = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(
+  0,
+  255
+)})`;
+// console.log(randomColor);
