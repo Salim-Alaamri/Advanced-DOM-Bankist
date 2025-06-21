@@ -7,7 +7,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
-const header = document.querySelector('header');
+const header = document.querySelector('.header');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
@@ -104,17 +104,32 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
 // Sticky navigation
-const initialCoords = section1.getBoundingClientRect();
-// console.log(initialCoords);
-window.addEventListener('scroll', () => {
-  // console.log(window.scrollY);
-  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
-  else nav.classList.remove('sticky');
-});
+// const initialCoords = section1.getBoundingClientRect();
+// // console.log(initialCoords);
+// window.addEventListener('scroll', () => {
+//   // console.log(window.scrollY);
+//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// });
+
+//A better way : The Intersection Observer API
+// const obsCallbback = function (entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   });
+// };
+// const obsOptions = {
+//   root: null,
+//   trashold: [0, 0.2],
+// };
+// const observer = new IntersectionObserver(obsCallbback, obsOptions);
+// observer.observe(section1);
+
+
 
 ///////////////////////////////////////////
 ///////////////////////////////////////////
-///////////////////////////////////////////
+//TODO/////////Practices///////////////////
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 
